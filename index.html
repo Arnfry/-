@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>This One's For You, Amil</title>
+  <meta name="description" content="A little celebration of another trip around the sun.">
+  <meta name="theme-color" content="#713B43">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-locked">
+
+  <!-- Shared decorative symbols (original, drawn in SVG) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="star" viewBox="0 0 100 100"><path d="M50 2 61 38 98 38 68 60 79 97 50 75 21 97 32 60 2 38 39 38Z"/></symbol>
+      <symbol id="flower" viewBox="0 0 100 100">
+        <g>
+          <ellipse cx="50" cy="22" rx="14" ry="22"/><ellipse cx="50" cy="78" rx="14" ry="22"/>
+          <ellipse cx="22" cy="50" rx="22" ry="14"/><ellipse cx="78" cy="50" rx="22" ry="14"/>
+          <ellipse cx="30" cy="30" rx="14" ry="22" transform="rotate(-45 30 30)"/>
+          <ellipse cx="70" cy="70" rx="14" ry="22" transform="rotate(-45 70 70)"/>
+          <ellipse cx="70" cy="30" rx="14" ry="22" transform="rotate(45 70 30)"/>
+          <ellipse cx="30" cy="70" rx="14" ry="22" transform="rotate(45 30 70)"/>
+        </g>
+        <circle cx="50" cy="50" r="12" fill="var(--core, #24221F)"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Film grain + paper overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Page transition curtain -->
+  <div class="curtain" id="curtain" aria-hidden="true"></div>
+
+  <a class="skip" href="#birthday">Skip to content</a>
+
+  <!-- NAV -->
+  <header class="nav" id="nav" hidden>
+    <a class="nav__brand" href="#intro" aria-label="Back to the start">A<span>.</span></a>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navList" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav__list" id="navList" aria-label="Sections">
+      <a href="#birthday">Birthday</a>
+      <a href="#memories">Memories</a>
+      <a href="#message">Message</a>
+      <a href="#journey">The Journey</a>
+      <a href="#finale">Finale</a>
+    </nav>
+    <button class="music" id="musicBtn" aria-pressed="false" aria-label="Play music">
+      <span class="music__icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span class="music__label">Music</span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- ============ SECTION 1 — THE INTRODUCTION ============ -->
+    <section class="intro" id="intro" aria-labelledby="introTitle">
+      <div class="intro__rays" aria-hidden="true" data-speed="0.12"></div>
+      <div class="poster">
+        <div class="poster__frame" aria-hidden="true"></div>
+        <p class="poster__top"><span>Live &amp; Direct</span><span>★</span><span>One Night Only</span></p>
+        <h1 class="poster__title" id="introTitle">
+          <span class="line l1"><span>This one's</span></span>
+          <span class="line l2"><span>for you,</span></span>
+          <span class="line l3"><span>Amil.</span></span>
+        </h1>
+        <p class="poster__sub">A little celebration of another trip around the sun.</p>
+        <button class="btn" id="enterBtn" type="button">
+          <span>Enter the experience</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="poster__foot" aria-hidden="true">Admit one · Box of memories · Est. 1967</p>
+        <svg class="poster__flower f1" aria-hidden="true"><use href="#flower"/></svg>
+        <svg class="poster__flower f2" aria-hidden="true"><use href="#flower"/></svg>
+        <svg class="poster__star s1" aria-hidden="true"><use href="#star"/></svg>
+      </div>
+    </section>
+
+    <div class="experience" id="experience">
+
+    <!-- ============ SECTION 2 — HAPPY BIRTHDAY ============ -->
+    <section class="bday" id="birthday" aria-labelledby="bdayTitle">
+      <canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+      <div class="bday__sun" aria-hidden="true" data-speed="-0.1"></div>
+      <svg class="deco d1" aria-hidden="true" data-speed="0.18"><use href="#flower"/></svg>
+      <svg class="deco d2" aria-hidden="true" data-speed="-0.12"><use href="#star"/></svg>
+      <svg class="deco d3" aria-hidden="true" data-speed="0.1"><use href="#flower"/></svg>
+      <svg class="deco d4" aria-hidden="true" data-speed="-0.2"><use href="#star"/></svg>
+
+      <div class="bday__inner">
+        <p class="ribbon reveal"><span>★ A trip around the sun ★</span></p>
+        <h2 class="bday__title" id="bdayTitle">
+          <span class="w w1 reveal" style="--d:.05s">Happy</span>
+          <span class="w w2 reveal" style="--d:.2s">Birthday,</span>
+          <span class="w w3 reveal" style="--d:.35s">Amil<b>!</b></span>
+        </h2>
+        <p class="bday__small reveal" style="--d:.5s">Doors open at dawn · Everyone's invited · The guest of honour is you</p>
+        <button class="btn btn--dark reveal" id="confettiBtn" type="button" style="--d:.6s">Throw a little confetti</button>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 3 — A COLLECTION OF MEMORIES ============ -->
+    <section class="memories" id="memories" aria-labelledby="memTitle">
+      <header class="sec-head reveal">
+        <p class="kicker">Side A · Track 03</p>
+        <h2 id="memTitle">A Collection <em>of</em> Memories</h2>
+        <p class="lede">Pulled from the box, one by one. Tap any photo to look closer.</p>
+      </header>
+      <div class="gallery" id="gallery" aria-live="polite"></div>
+    </section>
+
+    <!-- ============ SECTION 4 — A LITTLE MESSAGE ============ -->
+    <section class="message" id="message" aria-labelledby="msgTitle">
+      <div class="letter reveal">
+        <span class="letter__tape t1" aria-hidden="true"></span>
+        <span class="letter__tape t2" aria-hidden="true"></span>
+        <p class="letter__date">Dear Amil,</p>
+        <h2 class="letter__title" id="msgTitle">Another year, another chapter, another beautiful journey.</h2>
+
+        <!-- ✏️ EDIT YOUR PERSONAL MESSAGE BELOW (keep each paragraph inside its own <p>) -->
+        <div class="letter__body" id="personalMessage">
+          <p>Some people make a room feel easier to be in. You're one of them, and I hope you know that.</p>
+          <p>This year has had its loud moments and its quiet ones. Through all of it, you kept moving, kept laughing, and kept being someone worth knowing.</p>
+          <p>Here's to the next chapter. I can't wait to see what you write in it.</p>
+          <p class="placeholder-note">Semoga TKAnya lancar, Mil</p>
+        </div>
+        <!-- ✏️ END OF PERSONAL MESSAGE -->
+
+        <p class="letter__sign" id="letterSign">Semangat, ya!— <span>Akra</span></p>
+      </div>
+    </section>
+
+    <!-- ============ SECTION 5 — THE BEATLES EXPERIENCE ============ -->
+    <section class="journey" id="journey" aria-labelledby="jTitle">
+      <header class="sec-head sec-head--light reveal">
+        <p class="kicker">Side B · The Long &amp; Winding Scroll</p>
+        <h2 id="jTitle">A Little Journey <em>Through the Music</em></h2>
+        <p class="lede">Swipe, scroll or use the arrow buttons — four small stops.</p>
+      </header>
+
+      <div class="journey__ctrl">
+        <button type="button" class="round" id="jPrev" aria-label="Previous stop">&larr;</button>
+        <button type="button" class="round" id="jNext" aria-label="Next stop">&rarr;</button>
+      </div>
+
+      <div class="track" id="track" tabindex="0" role="region" aria-label="Journey stops. Scroll horizontally.">
+
+        <!-- Stop 1: crossing -->
+        <article class="stop stop--cross">
+          <div class="stop__art" aria-hidden="true">
+            <div class="cross__sky"></div>
+            <div class="cross__trees"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="cross__road"><div class="zebra"></div></div>
+            <div class="cross__walkers"><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="stop__txt">
+            <p class="kicker">Stop 01</p>
+            <h3>The Zebra Crossing</h3>
+            <p>Four people, one street, one morning that never really ended. Some journeys are just a walk you take on purpose.</p>
+          </div>
+        </article>
+
+        <!-- Stop 2: collage -->
+        <article class="stop stop--pepper">
+          <div class="stop__art" aria-hidden="true">
+            <div class="pepper__bed"><svg class="pf pf1"><use href="#flower"/></svg><svg class="pf pf2"><use href="#flower"/></svg><svg class="pf pf3"><use href="#flower"/></svg><svg class="pf pf4"><use href="#flower"/></svg><svg class="pf pf5"><use href="#flower"/></svg></div>
+            <div class="pepper__drum"><span>Amil's</span><b>Lonely<br>Hearts<br>Club</b><span>★ Band ★</span></div>
+            <div class="pepper__cut c1"></div><div class="pepper__cut c2"></div><div class="pepper__cut c3"></div>
+          </div>
+          <div class="stop__txt">
+            <p class="kicker">Stop 02</p>
+            <h3>The Collage</h3>
+            <p>Colours stacked on colours, cut out and pasted down. A whole band's worth of personality, and none of it matching.</p>
+          </div>
+        </article>
+
+        <!-- Stop 3: submarine -->
+        <article class="stop stop--sub">
+          <div class="stop__art" aria-hidden="true">
+            <svg class="sub" viewBox="0 0 320 160">
+              <g class="sub__body">
+                <rect x="40" y="52" width="230" height="64" rx="32" fill="#D9AA38" stroke="#24221F" stroke-width="4"/>
+                <rect x="132" y="28" width="48" height="34" rx="8" fill="#D9AA38" stroke="#24221F" stroke-width="4"/>
+                <rect x="150" y="10" width="6" height="22" fill="#24221F"/><rect x="150" y="10" width="22" height="6" fill="#24221F"/>
+                <circle cx="80" cy="84" r="11" fill="#F4E8D0" stroke="#24221F" stroke-width="4"/>
+                <circle cx="120" cy="84" r="11" fill="#F4E8D0" stroke="#24221F" stroke-width="4"/>
+                <circle cx="160" cy="84" r="11" fill="#F4E8D0" stroke="#24221F" stroke-width="4"/>
+                <circle cx="200" cy="84" r="11" fill="#F4E8D0" stroke="#24221F" stroke-width="4"/>
+                <path d="M270 70 l34 -20 v68 l-34 -20z" fill="#D66B35" stroke="#24221F" stroke-width="4" stroke-linejoin="round"/>
+                <circle cx="228" cy="84" r="8" fill="#713B43"/>
+              </g>
+            </svg>
+            <i class="bub b1"></i><i class="bub b2"></i><i class="bub b3"></i><i class="bub b4"></i><i class="bub b5"></i>
+            <div class="sub__sea"></div>
+          </div>
+          <div class="stop__txt">
+            <p class="kicker">Stop 03</p>
+            <h3>Under the Waves</h3>
+            <p>Sometimes the best thing to do is dive somewhere strange and bright and see who's down there with you.</p>
+          </div>
+        </article>
+
+        <!-- Stop 4: mystery tour ticket -->
+        <article class="stop stop--tour">
+          <div class="stop__art" aria-hidden="true">
+            <div class="swirl"></div>
+            <div class="ticket">
+              <p>Mystery Tour</p>
+              <strong>Admit<br>one</strong>
+              <p>Destination: <em>another year</em></p>
+              <span>No. 0001 · Amil</span>
+            </div>
+          </div>
+          <div class="stop__txt">
+            <p class="kicker">Stop 04</p>
+            <h3>The Mystery Tour</h3>
+            <p>Nobody knows exactly where the road goes. That's the good part. Climb aboard, keep the window down.</p>
+          </div>
+        </article>
+
+      </div>
+      <div class="dots" id="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+    </section>
+
+    <!-- ============ SECTION 6 — THE FINALE ============ -->
+    <section class="finale" id="finale" aria-labelledby="finTitle">
+      <div class="finale__sky" id="finaleSky" aria-hidden="true"></div>
+      <div class="finale__inner">
+        <h2 class="finale__title" id="finTitle">
+          <span class="fl reveal" style="--d:.0s">The world is</span>
+          <span class="fl reveal" style="--d:.3s">a little more</span>
+          <span class="fl reveal" style="--d:.6s">beautiful</span>
+          <span class="fl reveal" style="--d:.9s">with you in it.</span>
+        </h2>
+        <p class="finale__hb reveal" style="--d:1.4s">Happy Birthday, Amil.</p>
+        <p class="finale__end" id="theEnd" aria-hidden="true">— The End —</p>
+        <button class="btn btn--ghost" id="replayBtn" type="button">Play it again</button>
+      </div>
+      <div class="iris" id="iris" aria-hidden="true"></div>
+    </section>
+
+    </div><!-- /experience -->
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lb__close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lb__nav lb__prev" id="lbPrev" aria-label="Previous photo">&larr;</button>
+    <figure class="lb__fig">
+      <img id="lbImg" alt="">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lb__nav lb__next" id="lbNext" aria-label="Next photo">&rarr;</button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Background music: put your file at assets/audio/background.mp3 -->
+  <audio id="bgm" loop preload="none">
+    <source src="assets/audio/background.mp3" type="audio/mpeg">
+    <source src="assets/audio/background.ogg" type="audio/ogg">
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
